@@ -1,7 +1,8 @@
-package com.nava_b.betterlife;
+package com.nava_b.betterlife.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import com.nava_b.betterlife.R;
 
 public class MainActivity extends AppCompatActivity
 {

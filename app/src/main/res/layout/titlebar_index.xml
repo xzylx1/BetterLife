@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/home_navibar_index"
+              android:orientation="horizontal"
+              android:background="@android:color/holo_blue_light"
+              android:layout_width="match_parent"
+              android:layout_height="50dp">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/navibar_choose_pos_btn"
+            android:layout_width="85dp"
+            android:layout_height="match_parent">
+
+    <TextView
+            android:textSize="@dimen/blife_text_size"
+            android:singleLine="true"
+            android:paddingLeft="3dp"
+            android:layout_width="65dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/now_position"/>
+
+        <ImageView
+                android:src="@drawable/navibar_get_more"
+                android:layout_gravity="center_vertical"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/navibar_search_btn"
+            android:background="@drawable/navibar_search_bar_bkg"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical">
+
+        <ImageView
+                android:src="@drawable/navibar_suggest_search"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+    </RelativeLayout>
+
+    <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/navibar_scan_btn"
+            android:src="@drawable/navibar_icon_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>
