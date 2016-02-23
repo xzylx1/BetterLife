@@ -41,8 +41,8 @@
                 android:src="@drawable/navibar_suggest_search"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
     </RelativeLayout>
 
     <ImageView

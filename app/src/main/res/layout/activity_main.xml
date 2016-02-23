@@ -11,39 +11,41 @@
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="10">
+                android:layout_weight="9">
 
         </android.support.v4.view.ViewPager>
 
         <RadioGroup
+                android:background="@drawable/bottom_bg"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1.5">
+                android:layout_weight="1">
 
                 <RadioButton
                         android:id="@+id/home_radio_btn"
-                        style="@style/button_group_style"
-                        android:drawableTop="@drawable/navibar_icon_scan"
+                        android:checked="true"
+                        style="@style/radio_button_style"
+                        android:drawableTop="@drawable/selector_home_main"
                         android:text="@string/home_btn"/>
 
                 <RadioButton
-                        android:id="@+id/nearby_radio_btn"
-                        style="@style/button_group_style"
-                        android:drawableTop="@drawable/navibar_icon_scan"
-                        android:text="@string/home_btn"/>
+                        android:id="@+id/tuan_radio_btn"
+                        style="@style/radio_button_style"
+                        android:drawableTop="@drawable/selector_tuan_main"
+                        android:text="@string/tuan_btn"/>
 
                 <RadioButton
-                        android:id="@+id/better_radio_btn"
-                        style="@style/button_group_style"
-                        android:drawableTop="@drawable/navibar_icon_scan"
-                        android:text="@string/home_btn"/>
+                        android:id="@+id/found_radio_btn"
+                        style="@style/radio_button_style"
+                        android:drawableTop="@drawable/selector_found_main"
+                        android:text="@string/found_btn"/>
 
                 <RadioButton
                         android:id="@+id/mine_radio_btn"
-                        style="@style/button_group_style"
-                        android:drawableTop="@drawable/navibar_icon_scan"
-                        android:text="@string/home_btn"/>
+                        style="@style/radio_button_style"
+                        android:drawableTop="@drawable/selector_my_main"
+                        android:text="@string/mine_btn"/>
         </RadioGroup>
 
 </LinearLayout>

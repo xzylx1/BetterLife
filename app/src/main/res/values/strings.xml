@@ -2,4 +2,8 @@
     <string name="app_name">惠生活</string>
     <string name="now_position">成都</string>
     <string name="home_btn">首页</string>
+    <string name="tuan_btn">闪团</string>
+    <string name="found_btn">发现</string>
+    <string name="mine_btn">我的</string>
+
 </resources>
