@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android-expandpoptab-library/android-expandpoptab-library.iml" filepath="$PROJECT_DIR$/android-expandpoptab-library/android-expandpoptab-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/betterlife.iml" filepath="$PROJECT_DIR$/betterlife.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpapi/httpapi.iml" filepath="$PROJECT_DIR$/httpapi/httpapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modle/modle.iml" filepath="$PROJECT_DIR$/modle/modle.iml" />
     </modules>
   </component>
 </project>

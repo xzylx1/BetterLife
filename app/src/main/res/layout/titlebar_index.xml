@@ -4,20 +4,22 @@
               android:orientation="horizontal"
               android:background="@android:color/holo_blue_light"
               android:layout_width="match_parent"
-              android:layout_height="50dp">
+              android:layout_height="@dimen/titlebar_height">
 
     <LinearLayout
             android:orientation="horizontal"
             android:id="@+id/navibar_choose_pos_btn"
-            android:layout_width="85dp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
             android:layout_height="match_parent">
 
     <TextView
-            android:textSize="@dimen/blife_text_size"
+            android:textSize="@dimen/nava_4_size"
             android:singleLine="true"
-            android:paddingLeft="3dp"
-            android:layout_width="65dp"
+            android:paddingLeft="1dp"
             android:gravity="center"
+            android:layout_weight="3"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="@string/now_position"/>
@@ -25,16 +27,18 @@
         <ImageView
                 android:src="@drawable/navibar_get_more"
                 android:layout_gravity="center_vertical"
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"/>
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="8dp"/>
 
     </LinearLayout>
 
     <RelativeLayout
             android:id="@+id/navibar_search_btn"
             android:background="@drawable/navibar_search_bar_bkg"
-            android:layout_width="260dp"
-            android:layout_height="40dp"
+            android:layout_weight="6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/nava_6_size"
             android:layout_gravity="center_vertical">
 
         <ImageView
@@ -49,7 +53,9 @@
             android:layout_gravity="center"
             android:id="@+id/navibar_scan_btn"
             android:src="@drawable/navibar_icon_scan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_marginLeft="@dimen/nava_0_size"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/nava_6_size"/>
 
 </LinearLayout>

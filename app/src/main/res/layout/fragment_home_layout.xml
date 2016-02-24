@@ -1,13 +1,17 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.nava_b.betterlife.ui.Home_Fragment">
+              android:orientation="vertical"
+             tools:context="com.nava_b.betterlife.fragment.Home_Fragment">
 
-    <include layout="@layout/titlebar_index"></include>
+    <include layout="@layout/titlebar_index"/>
 
+    <ListView
+            android:id="@+id/home_page_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+    </ListView>
 
-
-
-</FrameLayout>
+</LinearLayout>
