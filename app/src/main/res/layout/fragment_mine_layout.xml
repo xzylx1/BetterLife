@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout android:background="@drawable/backgruond_list_light" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:background="@drawable/mine_main_login_bg" android:layout_width="match_parent" android:layout_height="@dimen/nava_16_size">
+            <ImageView android:layout_marginTop="@dimen/nava_11_size" android:src="@drawable/vip3" android:id="@+id/vip_level_icon" android:layout_centerHorizontal="true" android:layout_width="@dimen/nava_12_size" android:layout_height="@dimen/nava_8_size"/>
+            <TextView android:textColor="@android:color/white" android:shadowColor="@color/main_gray_font" android:layout_marginTop="@dimen/nava_14_size" android:text="继续吃100顿霸王餐将升级SVIP1" android:layout_centerHorizontal="true" android:textSize="@dimen/nava_2_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <LinearLayout android:background="@color/white" android:gravity="center_vertical"
+                      android:orientation="horizontal"
+                       android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_coupon_normal"/>
+                <TextView android:text="霸王券" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_favorite_normal"/>
+                <TextView android:text="收藏" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_store_card_label_normal"/>
+                <TextView android:text="卡包" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout android:background="@color/white" android:layout_marginTop="@dimen/nava_00_size"
+                        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1.5">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="订单" android:layout_centerVertical="true" android:textSize="@dimen/nava_3_size" android:layout_marginLeft="@dimen/nava_0_size"/>
+              <TextView android:layout_centerVertical="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部订单" android:textSize="@dimen/nava_2_size" android:textColor="@android:color/darker_gray" android:layout_alignParentRight="true" android:layout_marginRight="@dimen/nava_3_size"/>
+            <ImageView android:layout_centerVertical="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/nava_0_size" android:src="@drawable/right_arrow" android:layout_alignParentRight="true"/></RelativeLayout>
+
+        <LinearLayout android:layout_marginTop="1dp" android:background="@color/white"
+                      android:gravity="center_vertical" android:orientation="horizontal" android:layout_weight="1"
+                      android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_groupon"/>
+                <TextView android:text="团购" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_pay_at_shop"/>
+                <TextView android:text="到店付" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_takeout"/>
+                <TextView android:text="点菜" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_movie"/>
+                <TextView android:text="电影" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_hotel_normal"/>
+                <TextView android:text="酒店" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout></LinearLayout>
+
+        <RelativeLayout android:background="@color/white" android:layout_marginTop="@dimen/nava_00_size"
+                        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1.5">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="资产" android:layout_centerVertical="true" android:textSize="@dimen/nava_3_size" android:layout_marginLeft="@dimen/nava_0_size"/></RelativeLayout>
+
+        <LinearLayout android:layout_marginTop="1dp" android:background="@color/white" android:gravity="center_vertical" android:orientation="horizontal" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                    <TextView android:text="666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_1_size"/>
+                    <TextView android:text="余额" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_5_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+                <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                    <TextView android:text="888" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_1_size" />
+                    <TextView android:text="积分" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_5_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+                <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                    <TextView android:text="9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_1_size" />
+                    <TextView android:text="抵用券" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_5_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout android:background="@color/white" android:layout_marginTop="@dimen/nava_00_size" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1.5">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="推荐" android:layout_centerVertical="true" android:textSize="@dimen/nava_3_size" android:layout_marginLeft="@dimen/nava_0_size"/>
+            <TextView android:layout_centerVertical="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="百分百中奖率！更有ipad Pro等你拿！" android:textSize="@dimen/nava_2_size" android:textColor="@android:color/holo_red_light" android:layout_alignParentRight="true" android:layout_marginRight="@dimen/nava_3_size"/>
+            <ImageView android:layout_centerVertical="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/nava_0_size" android:src="@drawable/right_arrow" android:layout_alignParentRight="true"/></RelativeLayout>
+
+        <LinearLayout android:layout_marginTop="1dp" android:background="@color/white" android:gravity="center_vertical" android:orientation="horizontal" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_recharge"/>
+                <TextView android:text="手机充值" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_pay_at_shop_recommend"/>
+                <TextView android:text="抽奖" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_lottery"/>
+                <TextView android:text="储值卡" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+            <RelativeLayout android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_0_size" android:src="@drawable/mine_main_pay_at_shop_recommend"/>
+                <TextView android:text="到店付" android:layout_centerHorizontal="true" android:layout_marginTop="@dimen/nava_6_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/></RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/titlebar_mine"/>
+</FrameLayout>

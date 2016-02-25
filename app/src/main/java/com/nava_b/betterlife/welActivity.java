@@ -19,7 +19,7 @@ public class welActivity extends AppCompatActivity
             {
                 try
                 {
-                    Thread.sleep(3000);
+                    Thread.sleep(500);
                 }
                 catch (InterruptedException e)
                 {
@@ -29,6 +29,7 @@ public class welActivity extends AppCompatActivity
                 {
                     Intent intent = new Intent(getApplication(),MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         }).start();

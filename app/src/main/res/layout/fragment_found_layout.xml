@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".fragment.Found_fragment">
+
+    <com.nava_b.betterlife.Titlebar_Common
+            android:id="@+id/my_title_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:left_btn_title="@drawable/shoppingcart_normal"
+            app:right_btn_title="@drawable/component_search_common"
+            app:titlebar_title="发现"/>
+
+
+    <ListView
+            android:id="@+id/found_page_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+</LinearLayout>

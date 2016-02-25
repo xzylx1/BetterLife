@@ -35,9 +35,4 @@
         <item name="android:drawableTop">@drawable/selector_my_main</item>
     </style>
 
-    <style name="PopupWindowAnimation">
-        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
-        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
-    </style>
-
 </resources>

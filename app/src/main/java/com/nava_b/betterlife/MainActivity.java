@@ -1,16 +1,16 @@
 package com.nava_b.betterlife;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.*;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.nava_b.betterlife.fragment.Found_fragment;
 import com.nava_b.betterlife.fragment.Home_fragment;
+import com.nava_b.betterlife.fragment.Mine_fragment;
+import com.nava_b.betterlife.fragment.Tuan_fragment;
 
 import java.util.ArrayList;
 
@@ -43,15 +43,16 @@ public class MainActivity extends FragmentActivity
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        for (int i = 0; i < 4; i++)
-        {
-            fragment = Home_fragment.newInstance();
-            fragmentList.add(fragment);
-        }
+        fragmentList.add(Home_fragment.newInstance());
+        fragmentList.add(Tuan_fragment.newInstance());
+        fragmentList.add(Found_fragment.newInstance());
+        fragmentList.add(Mine_fragment.newInstance());
 
         MyFragmentPagerViewAdatper adapter = new MyFragmentPagerViewAdatper(getSupportFragmentManager());
         fragmentViewpager.setAdapter(adapter);
         adapter.setDataFragmentList(fragmentList);
+
+
 
         tabRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -146,6 +147,5 @@ public class MainActivity extends FragmentActivity
     protected void onDestroy()
     {
         super.onDestroy();
-        finish();
     }
 }

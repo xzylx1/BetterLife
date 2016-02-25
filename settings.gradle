@@ -1,1 +1,1 @@
-include ':app', ':core', ':httpapi', ':modle', ':android-expandpoptab-library'
+include ':app', ':core', ':httpapi', ':modle', ':android-expandpoptab-library', ':imageSlider_viktor_library', ':circleindicator'
