@@ -5,12 +5,12 @@
         android:orientation="horizontal"
         android:background="@drawable/title_bottom_line_trans"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/nava_9_size">
+        android:layout_height="@dimen/nava_8_size">
 
     <ImageView
             android:src="@drawable/mine_icon"
             android:layout_gravity="center_vertical"
-            android:paddingRight="@dimen/nava_0_size"
+            android:padding="@dimen/nava_0_size"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"/>
@@ -26,9 +26,9 @@
 
         <TextView
             android:id="@+id/user_name"
-            android:textSize="@dimen/nava_3_size"
+            android:textSize="@dimen/nava_2_size"
             android:singleLine="true"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -36,10 +36,10 @@
 
         <TextView
                 android:id="@+id/user_info"
-                android:textSize="@dimen/nava_2_size"
+                android:textSize="@dimen/nava_1_size"
                 android:singleLine="true"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
+                android:layout_weight="2"
+                android:layout_gravity="top"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="您总共吃了100顿霸王餐"/>

@@ -10,4 +10,5 @@
     <color name="red">#ff5a00</color>
     <color name="main_gray_font">#666666</color>
     <color name="main_orange_font">#FF6633</color>
+    <color name="bkg_gray">#88EBEBEB</color>
 </resources>

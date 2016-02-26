@@ -3,6 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
+        android:background="@color/bkg_gray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -11,7 +12,7 @@
                 android:id="@+id/fragment_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="9">
+                android:layout_weight="10">
 
         </android.support.v4.view.ViewPager>
 
@@ -27,6 +28,7 @@
                         android:id="@+id/tab_home_radio_btn"
                         android:checked="true"
                         style="@style/radio_button_style_home"
+                        android:background="@drawable/main_tab_bkg_selector"
                         android:text="@string/home_btn"/>
 
                 <RadioButton

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/home_navibar_index"
               android:orientation="horizontal"
-              android:background="@drawable/title_bottom_line"
+              android:background="@drawable/title_bottom_line_trans"
               android:layout_width="match_parent"
               android:layout_height="@dimen/nava_8_size">
 
@@ -41,7 +41,7 @@
             android:orientation="horizontal"
             android:layout_weight="6"
             android:layout_width="0dp"
-            android:layout_height="@dimen/nava_6_size"
+            android:layout_height="@dimen/nava_5_size"
             android:layout_gravity="center_vertical">
 
         <ImageView
@@ -67,6 +67,6 @@
             android:layout_marginLeft="@dimen/nava_0_size"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/nava_6_size"/>
+            android:layout_height="@dimen/nava_5_size"/>
 
 </LinearLayout>
