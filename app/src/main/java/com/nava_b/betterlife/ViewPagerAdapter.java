@@ -1,12 +1,10 @@
 package com.nava_b.betterlife;
 
-import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.util.SparseArray;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import java.util.List;
 import java.util.Random;
@@ -15,9 +13,10 @@ public class ViewPagerAdapter extends PagerAdapter
 {
 
     private final Random random = new Random();
-    private final SparseArray<TextView> mHolderArray = new SparseArray<>();
+    private final SparseArray<ImageView> mHolderArray = new SparseArray<>();
     private int mSize;
-    private List imageList;
+    private ImageView imageView;
+    private List<Integer> imageList;
 
     public ViewPagerAdapter() {
         mSize = 5;
@@ -45,31 +44,22 @@ public class ViewPagerAdapter extends PagerAdapter
 
     // 当要显示的图片可以进行缓存的时候，会调用这个方法进行显示图片的初始化，我们将要显示的ImageView加入到ViewGroup中，然后作为返回值返回即可
     @Override public Object instantiateItem(ViewGroup view, int position) {
-        TextView textView = new TextView(view.getContext());
-        textView.setText(String.valueOf(position + 1));
-        textView.setBackgroundColor(0xff000000 | random.nextInt(0x00ffffff));
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextColor(Color.WHITE);
-        textView.setTextSize(48);
-        view.addView(textView, ViewGroup.LayoutParams.MATCH_PARENT,
+        imageView = new ImageView(view.getContext());
+        imageView.setImageResource(imageList.get(position));
+//        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+//        textView.setText(String.valueOf(position + 1));
+//        textView.setBackgroundColor(0xff000000 | random.nextInt(0x00ffffff));
+//        textView.setGravity(Gravity.CENTER);
+//        textView.setTextColor(Color.WHITE);
+//        textView.setTextSize(48);
+        view.addView(imageView, ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
-        mHolderArray.put(position, textView);
-        return textView;
+        mHolderArray.put(position, imageView);
+        return imageView;
     }
 
     @Override public int getItemPosition(Object object) {
         return POSITION_NONE;
     }
 
-    public void addItem() {
-        mSize++;
-        notifyDataSetChanged();
-    }
-
-    public void removeItem() {
-        mSize--;
-        mSize = mSize < 0 ? 0 : mSize;
-
-        notifyDataSetChanged();
-    }
 }

@@ -31,6 +31,31 @@ public class Home_fragment extends Fragment
     {
         View view = inflater.inflate(R.layout.fragment_home_layout, container, false);
         ButterKnife.bind(this, view);
+        /**
+         * DispImgActivity.java
+         */
+        // Get current page index
+        mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float f, int j) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                DispImgActivity.this.position = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+        // Return current index to Adapter
+        public int getCurrentPagerIdx() {
+        return position;
+    }
+
         return view;
     }
 
@@ -52,4 +77,6 @@ public class Home_fragment extends Fragment
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
+
 }

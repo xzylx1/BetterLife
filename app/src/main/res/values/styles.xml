@@ -17,6 +17,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/main_tab_bkg_selector</item>
     </style>
 
     <style name="radio_button_style_home" parent="radio_button_style">
