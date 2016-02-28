@@ -6,7 +6,7 @@
             <ImageView android:layout_marginTop="@dimen/nava_11_size" android:src="@drawable/vip3" android:id="@+id/vip_level_icon" android:layout_centerHorizontal="true" android:layout_width="@dimen/nava_12_size" android:layout_height="@dimen/nava_8_size"/>
             <TextView android:textColor="@android:color/white" android:shadowColor="@color/main_gray_font" android:layout_marginTop="@dimen/nava_14_size" android:text="继续吃100顿霸王餐将升级SVIP1" android:layout_centerHorizontal="true" android:textSize="@dimen/nava_2_size" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
         </RelativeLayout>
-
+        <View android:background="@color/bkg_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
         <LinearLayout android:background="@color/white" android:gravity="center_vertical"
                       android:orientation="horizontal"
                        android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content">
