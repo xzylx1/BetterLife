@@ -1,6 +1,5 @@
 package com.nava_b.betterlife.modle;
 
-
 import com.warmtel.expandtab.KeyValueBean;
 
 import java.util.List;

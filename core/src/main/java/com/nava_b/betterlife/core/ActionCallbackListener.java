@@ -4,6 +4,7 @@ package com.nava_b.betterlife.core;
  * Action的处理结果回调监听器
  */
 public interface ActionCallbackListener<T> {
+    public void onStart(T data);
     /**
      * 成功时调用
      *

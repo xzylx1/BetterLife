@@ -1,4 +1,4 @@
-package com.nava_b.betterlife;
+package com.nava_b.betterlife.tools;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.nava_b.betterlife.R;
 
 /**
  * Created by xhit-nava on 2016/2/25.

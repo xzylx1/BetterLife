@@ -2,70 +2,172 @@
 package com.nava_b.betterlife.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.os.AsyncTask;
+import android.util.Log;
+import com.google.gson.Gson;
+import com.nava_b.betterlife.httpapi.Api;
+import com.nava_b.betterlife.httpapi.ApiImp;
+import com.nava_b.betterlife.httpapi.utils.ApiPreference;
+import com.nava_b.betterlife.modle.AutoMessageDTO;
+import com.nava_b.betterlife.modle.ConfigResult;
+import com.nava_b.betterlife.modle.MerchantBean;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * AppAction接口的实现类
- *
-
  */
 public class AppActionImpl implements AppAction {
 
-    private final static int LOGIN_OS = 1; // 表示Android
-    private final static int PAGE_SIZE = 20; // 默认每页20条
-
     private Context context;
-//    private Api api;
+    private Api mApi;
 
     public AppActionImpl(Context context) {
         this.context = context;
-//        this.api = new ApiImpl();
+        this.mApi = new ApiImp(context);
     }
 
     @Override
-    public void sendSmsCode(final String phoneNum, final ActionCallbackListener<Void> listener) {
-        // 参数检查
-        if (TextUtils.isEmpty(phoneNum)) {
-            if (listener != null) {
-                listener.onFailure(ErrorEvent.PARAM_NULL, "手机号为空");
+    public void getNearbyConfig(final ActionCallbackListener<ConfigResult> listener) {
+        new AsyncTask<String, Void, ConfigResult>() {
+            @Override
+            protected void onPreExecute() {
+                String configsStr = ApiPreference.getInstance(context).getCache(Api.BASE_URL + Api.configs);
+                if (configsStr != null) {
+                    ConfigResult configResult = new Gson().fromJson(configsStr, ConfigResult.class);
+                    listener.onStart(configResult);
+                }
             }
-            return;
-        }
-        Pattern pattern = Pattern.compile("1\\d{10}");
-        Matcher matcher = pattern.matcher(phoneNum);
-        if (!matcher.matches()) {
-            if (listener != null) {
-                listener.onFailure(ErrorEvent.PARAM_ILLEGAL, "手机号不正确");
-            }
-            return;
-        }
 
-//        // 请求Api
-//        new AsyncTask<Void, Void, ApiResponse<Void>>() {
-//            @Override
-//            protected ApiResponse<Void> doInBackground(Void... voids) {
-//                return api.sendSmsCode4Register(phoneNum);
-//            }
-//
-//            @Override
-//            protected void onPostExecute(ApiResponse<Void> response) {
-//                if (listener != null && response != null) {
-//                    if (response.isSuccess()) {
-//                        listener.onSuccess(null);
-//                    } else {
-//                        listener.onFailure(response.getEvent(), response.getMsg());
-//                    }
-//                }
-//            }
-//        }.execute();
+            @Override
+            protected ConfigResult doInBackground(String... params) {
+                try {
+                    return mApi.getNearbyConfigs();
+                } catch (IOException e) {
+                    return null;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(ConfigResult configResult) {
+                if (configResult != null) {
+                    listener.onSuccess(configResult);
+                } else {
+                    listener.onFailure(ErrorEvent.PARAM_ILLEGAL, ErrorEvent.PARAM_NULL);
+                }
+            }
+        }.execute();
     }
 
     @Override
-    public void register(String phoneNum, String code, String password, ActionCallbackListener<Void> listener) {
+    public void getNearbyAround(final ActionCallbackListener<ArrayList<MerchantBean>> listener) {
+        new AsyncTask<String, Void, ArrayList<MerchantBean>>() {
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                String aroundStr = ApiPreference.getInstance(context).getCache(Api.BASE_URL + Api.around);
+                if (aroundStr != null) {
+                    ArrayList<MerchantBean> MerchantLists = parseJsonToMerchantList(aroundStr);
+                    listener.onStart(MerchantLists);
+                }
+            }
 
+            @Override
+            protected ArrayList<MerchantBean> doInBackground(String... params) {
+                try {
+                    return mApi.getNearbyAround();
+                } catch (IOException e) {
+                    return null;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(ArrayList<MerchantBean> merchantLists) {
+                if (merchantLists != null) {
+                    listener.onSuccess(merchantLists);
+                } else {
+                    listener.onFailure(ErrorEvent.PARAM_ILLEGAL, ErrorEvent.PARAM_NULL);
+                }
+            }
+        }.execute();
     }
 
+    @Override
+    public AutoMessageDTO getCheapAutoComplete(String wordKey) {
+        try {
+            InputStream inputStream = context.getAssets().open("autoComplete");
+            String jsonstr = readStrFromInputStream(inputStream);
+            Gson gson = new Gson();
+            Log.e("tag", "jsonstr  :" + jsonstr);
+            AutoMessageDTO autoMessageDTO = gson.fromJson(jsonstr, AutoMessageDTO.class);
+            return autoMessageDTO;
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
+    public String readStrFromInputStream(InputStream is) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line);
+        }
+        Log.e("tag", "sb.toString()  " + sb.toString());
+        reader.close();
+        is.close();
+        return sb.toString();
+    }
+
+    /**
+     * 解析Json字符串, 构造ListView数据源
+     *
+     * @return
+     */
+    public ArrayList<MerchantBean> parseJsonToMerchantList(String message) {
+        ArrayList<MerchantBean> merchantList = new ArrayList<MerchantBean>();
+        try {
+            JSONObject jsonRoot = new JSONObject(message);
+            JSONObject jsonInfo = jsonRoot.getJSONObject("info");
+            JSONArray jsonMerchatArray = jsonInfo.getJSONArray("merchantKey");
+            int length = jsonMerchatArray.length();
+
+            for (int i = 0; i < length; i++) {
+                JSONObject jsonItem = jsonMerchatArray.getJSONObject(i);
+                String name = jsonItem.getString("name");
+                String coupon = jsonItem.getString("coupon");
+                String location = jsonItem.getString("location");
+                String distance = jsonItem.getString("distance");
+                String picUrl = jsonItem.getString("picUrl");
+                String couponType = jsonItem.getString("couponType"); // 券
+                String cardType = jsonItem.getString("cardType"); // 卡
+                String groupType = jsonItem.getString("groupType"); // 团
+
+                MerchantBean merchant = new MerchantBean();
+                merchant.setName(name);
+                merchant.setCoupon(coupon);
+                merchant.setLocation(location);
+                merchant.setDistance(distance);
+                merchant.setPicUrl(picUrl);
+                merchant.setCardType(cardType);
+                merchant.setCouponType(couponType);
+                merchant.setGroupType(groupType);
+
+                merchantList.add(merchant);
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return merchantList;
+    }
 }

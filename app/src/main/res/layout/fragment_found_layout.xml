@@ -7,7 +7,7 @@
               android:layout_height="match_parent"
               tools:context=".fragment.Found_fragment">
 
-    <com.nava_b.betterlife.Titlebar_Common
+    <com.nava_b.betterlife.tools.Titlebar_Common
             android:id="@+id/my_title_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -15,12 +15,16 @@
             app:right_btn_title="@drawable/component_search_common"
             app:titlebar_title="发现"/>
 
+    <com.warmtel.expandtab.ExpandPopTabView
+            android:id="@+id/near_expandpoptabview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tab_toggle_btn_bg="@drawable/near_expoptab_selector"
+            app:tab_toggle_btn_font_color="@android:color/background_dark" />
 
     <ListView
             android:id="@+id/found_page_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:dividerHeight="@dimen/nava_0_size"/>
-
-
 </LinearLayout>

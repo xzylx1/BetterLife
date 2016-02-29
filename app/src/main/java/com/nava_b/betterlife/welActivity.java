@@ -1,12 +1,12 @@
 package com.nava_b.betterlife;
 
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 public class welActivity extends AppCompatActivity
 {
-
+    public BetterLifeApplication mBetterLifeApp;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

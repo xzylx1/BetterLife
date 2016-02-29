@@ -1,4 +1,4 @@
-package com.nava_b.betterlife;
+package com.nava_b.betterlife.tools;
 
 import android.support.v4.view.PagerAdapter;
 import android.util.SparseArray;

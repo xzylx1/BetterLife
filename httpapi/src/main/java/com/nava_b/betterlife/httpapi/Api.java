@@ -1,0 +1,22 @@
+package com.nava_b.betterlife.httpapi;
+
+import com.nava_b.betterlife.modle.ConfigResult;
+import com.nava_b.betterlife.modle.MerchantBean;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+/**
+ * 定义接口
+ */
+public interface Api {
+    public static final String BASE_URL = "http://www.warmtel.com:8080/";
+    public static final String configs = "configs";
+    public static final String around = "around";
+
+    public ConfigResult getNearbyConfigs() throws IOException;
+
+    public ArrayList<MerchantBean> getNearbyAround() throws IOException;
+
+
+}

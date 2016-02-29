@@ -7,7 +7,7 @@
               android:layout_height="match_parent"
               tools:context=".fragment.Tuan_fragment">
 
-    <com.nava_b.betterlife.Titlebar_Common
+    <com.nava_b.betterlife.tools.Titlebar_Common
             android:id="@+id/my_title_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
